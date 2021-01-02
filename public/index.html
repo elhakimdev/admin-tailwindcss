@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/app.css">
+    <style>
+        body {
+            font-family: 'Nunito', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="">
+    <div class="flex flex-col md:flex-row md:justify-between">
+        <div class="w-full md:overflow-y-auto md:min-h-screen md:w-1/5 bg-white p-5">
+            <div class="flex flex-col">
+                <div class="top flex flex-col">
+                    <div class="brands p-2 -mt-2">
+                        <div class="flex flex-row justify-between items-center">
+                            <h1 class="text-3xl font-semibold text-black">Tailwind</h1>
+                            <span class="md:hidden">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4 6h16M4 12h16M4 18h16"></path>
+                                </svg>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="profil bg-gray-50 rounded-lg p-5">
+                        <div class="profil-card flex flex-col">
+                            <div class="card-header">
+                                <div class="flex inline-flex items-center">
+                                    <span class="w-8 h-8 bg-blue-900 rounded-full border border-white-2 shadow-lg">
+                                    </span>
+                                    <div class="flex flex-col">
+                                        <span class="profil-name ml-3 font-semibold">Morgan Antony</span>
+                                        <a href="#"
+                                            class="profil-edit-links ml-3 text-xs text-blue-700 font-semibold">Edit
+                                            Profile</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <span>
+                                <hr class="border border-2 border-gray-300 mt-3 mb-3">
+                            </span>
+
+                            <div class="card-content">
+                                <div class="flex inline-flex items-center">
+                                    <div class="flex flex-col">
+                                        <span class="amount text-xs font-semibold text-gray-600">
+                                            Balanced
+                                        </span>
+                                        <span class="profil-name text-2xl font-semibold text-gray-800">
+                                            $21.200,00
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu md:hidden w-full items-center">
+                        <button
+                            class="menu-button bg-blue-500 p-2 w-full mt-3 text-white text-normal font-regu rounded-lg focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50">
+                            Menu
+                        </button>
+                    </div>
+                    <div id="menu" class="menu">
+                        <div class="flex flex-col mt-6">
+                            <div class="menu-items active-menu bg-gray-100 px-5 py-2 rounded-lg">
+                                <div class="flex items-center">
+                                    <span class="menu-icons">
+                                        <svg class="w-6 h-6 active text-blue-700" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4">
+                                            </path>
+                                        </svg>
+                                    </span>
+                                    <span class="menu-links-active">
+                                        <a href="#" class="font-semibold text-normal text-blue-700 ml-3">Dashboard</a>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="menu-items non-active-menu px-5 py-2 rounded-lg">
+                                <div class="flex items-center">
+                                    <span class="menu-icons">
+                                        <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                                            </path>
+                                        </svg>
+                                    </span>
+                                    <span class="menu-links-active">
+                                        <a href="#" class="font-semibold text-normal text-gray-700 ml-3">Messages</a>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="menu-items non-active-menu px-5 py-2 rounded-lg">
+                                <div class="flex items-center">
+                                    <span class="menu-icons">
+                                        <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01">
+                                            </path>
+                                        </svg>
+                                    </span>
+                                    <span class="menu-links-active">
+                                        <a href="#" class="font-semibold text-normal text-gray-700 ml-3">Activity</a>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="menu-items non-active-menu px-5 py-2 rounded-lg">
+                                <div class="flex items-center">
+                                    <span class="menu-icons">
+                                        <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4">
+                                            </path>
+                                        </svg>
+                                    </span>
+                                    <span class="menu-links-active">
+                                        <a href="#" class="font-semibold text-normal text-gray-700 ml-3">Task</a>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="menu-items non-active-menu px-5 py-2 rounded-lg">
+                                <div class="flex items-center">
+                                    <span class="menu-icons">
+                                        <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z">
+                                            </path>
+                                        </svg>
+                                    </span>
+                                    <span class="menu-links-active">
+                                        <a href="#" class="font-semibold text-normal text-gray-700 ml-3">Recipients</a>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="menu-items non-active-menu px-5 py-2 rounded-lg">
+                                <div class="flex items-center">
+                                    <span class="menu-icons">
+                                        <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z">
+                                            </path>
+                                        </svg>
+                                    </span>
+                                    <span class="menu-links-active">
+                                        <a href="#" class="font-semibold text-normal text-gray-700 ml-3">Merchants</a>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <span>
+                            <hr class="border border-2 border-gray-300 mt-3 mb-3">
+                        </span>
+                        <div class="flex flex-col mt-6">
+                            <div class="menu-items non-active-menu px-5 py-2 rounded-lg">
+                                <div class="flex items-center">
+                                    <span class="menu-icons">
+                                        <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z">
+                                            </path>
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                        </svg>
+                                    </span>
+                                    <span class="menu-links-active">
+                                        <a href="#" class="font-semibold text-normal text-gray-700 ml-3">Settings</a>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="menu-items non-active-menu px-5 py-2 rounded-lg">
+                                <div class="flex items-center">
+                                    <span class="menu-icons">
+                                        <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+                                            </path>
+                                        </svg>
+                                    </span>
+                                    <span class="menu-links-active">
+                                        <a href="#" class="font-semibold text-normal text-gray-700 ml-3">Help</a>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="menu-items non-active-menu px-5 py-2 rounded-lg">
+                                <div class="flex items-center">
+                                    <span class="menu-icons">
+                                        <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z">
+                                            </path>
+                                        </svg>
+                                    </span>
+                                    <span class="menu-links-active">
+                                        <a href="#" class="font-semibold text-normal text-gray-700 ml-3">Privacy</a>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="menu-items non-active-menu-danger px-5 py-2 rounded-lg">
+                                <div class="flex items-center">
+                                    <span class="menu-icons">
+                                        <svg class="w-6 h-6 text-red-700" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1">
+                                            </path>
+                                        </svg>
+                                    </span>
+                                    <span class="menu-links-active">
+                                        <a href="#" class="font-semibold text-normal text-red-700 ml-3">Logout</a>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="w-full md:w-4/5  bg-gray-100 p-5">
+            <div class="flex flex-col md:flex-row md:justify-between">
+                <div class="md:w-1/2 inline-flex items-center">
+                    <div class="w-8 h-8 bg-blue-900 rounded-full border border-white-4 shadow-lg">
+                    </div>
+                    <h1 class="font-semibold text-xl text-gray-700 ml-3">
+                        Hello Morgan, Welcome!
+                    </h1>
+                </div>
+                <div class="w-1/2 inline-flex items-center justify-between">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- script here -->
+    <script>
+
+    </script>
+</body>
+
+</html>
