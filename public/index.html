@@ -7,6 +7,9 @@
     <title>Document</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"
+        integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw=="
+        crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/app.css">
     <style>
         body {
@@ -21,7 +24,8 @@
     </style>
 </head>
 
-<body class="">
+<body class="antialiased">
+
     <div class="flex flex-col md:flex-row md:justify-between">
         <!-- sidebar -->
         <div class="w-full md:overflow-y-scroll md:max-h-screen md:w-1/5 bg-white p-5">
@@ -30,7 +34,8 @@
                     <div class="brands p-2 -mt-2">
                         <div class="flex flex-row justify-between items-center">
                             <h1 class="text-3xl font-semibold text-black"><strong>Tailwind</strong><span
-                                    class="font-light">UI</span></h1>
+                                    class="font-light">UI</span>
+                            </h1>
                             <span class="md:hidden">
                                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -434,12 +439,424 @@
                     </div>
                 </div>
             </div>
+            <!-- cards -->
+            <div class="flex flex-col md:flex-row my-2 mx-2">
+                <div class="w-full mt-3 md:w-2/3 md:mx-3 px-3 py-3 rounded-lg bg-white shadow">
+                    <div class="flex-flex-col">
+                        <div class="title flex flex-row justify-between items-center">
+                            <div class="font-semibold text-md">
+                                <span>Today Task</span>
+                            </div>
+                            <div>
+                                <button class="bg-green-100 text-sm font-semibold text-green-400 rounded-md px-2">
+                                    4 completed
+                                </button>
+                            </div>
+                        </div>
+                        <div class="checkbock flex flex-col">
+                            <div class="checkbok-items my-2 font-semibold">
+                                <input type="checkbox" id="" name="" value="Bike">
+                                <label for="" class="ml-3 text-green-700"> Send a Invoice</label><br>
+                                <input type="checkbox" id="" name="" value="Bike">
+                                <label for="" class="ml-3 text-gray-600"> Payroll for all employye</label><br>
+                                <input type="checkbox" id="" name="" value="Bike">
+                                <label for="" class="ml-3 text-gray-600"> Save all receipt details for
+                                    tomorrow</label><br>
+                                <input type="checkbox" id="" name="" value="Bike">
+                                <label for="" class="ml-3 text-gray-600"> check shipping</label><br>
+                                <input type="checkbox" id="" name="" value="Bike">
+                                <label for="" class="ml-3 text-gray-600"> I have a bike</label><br>
+                            </div>
+                        </div>
+                        <div class="link inline-flex items-center font-semibold">
+                            <span>
+                                <svg class="w-4 h-4 text-blue-700 mr-3" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                </svg></span>
+                            <span class="text-blue-700 mr-3">view all</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full mt-3 md:w-2/3 md:mx-3 px-3 py-3 rounded-lg bg-white shadow">
+                    <canvas id="myChart"></canvas>
+                </div>
+            </div>
+            <!-- table & Messages -->
+            <div class="mx-auto px-4 sm:px-8 w-full">
+                <div class="py-2">
+                    <div class="-mx-2 sm:-mx-8 px-4 sm:px-5 py-1 overflow-x-auto">
+                        <div class="inline-block min-w-full shadow rounded-lg overflow-x-hidden">
+                            <div class="bg-white py-2">
+                                <span class="">
+                                    <h1 class="mx-3 font-bold">List Transaction</h1>
+                                </span>
+                            </div>
+                            <table class="min-w-full">
+                                <thead>
+                                    <tr class="border-b-2 border-gray-300">
+                                        <th scope="col"
+                                            class="px-3 py-2 bg-gray-200 text-gray-800  text-left text-sm text-white uppercase font-Semibold">
+                                            Transaction
+                                        </th>
+                                        <th scope="col"
+                                            class="px-3 py-2 bg-gray-200 text-gray-800  text-left text-sm text-white uppercase font-Semibold">
+                                            Ammount
+                                        </th>
+                                        <th scope="col"
+                                            class="px-3 py-2 bg-gray-200 text-gray-800  text-left text-sm text-white uppercase font-Semibold">
+                                            Status
+                                        </th>
+                                        <th scope="col"
+                                            class="px-3 py-2 bg-gray-200 text-gray-800  text-left text-sm text-white uppercase font-Semibold">
+                                            Date
+                                        </th>
+                                        <th scope="col"
+                                            class="px-3 py-2 bg-gray-200 text-gray-800  text-left text-sm text-white uppercase font-Semibold">
+                                            Action
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-b">
+                                        <td class="px-3 py-3 bg-white text-sm">
+                                            <p class="text-gray-900 whitespace-no-wrap">
+                                                Paymen To Another User
+                                            </p>
+                                        </td>
+                                        <td class="px-3 py-3 bg-white text-sm">
+                                            <div class="inline-flex">
+                                                <span class="font-bold">$200</span>
+                                                <span class="ml-3">USD</span>
+                                            </div>
+                                        </td>
+                                        <td class="px-3 py-3 bg-white text-sm">
+                                            <span class="px-3 py-1 bg-green-100 rounded-full text-green-900 font-bold">
+                                                On Process
+                                            </span>
+                                        </td>
+                                        <td class="px-3 py-3 bg-white text-sm">
+                                            <p class="text-gray-900 whitespace-no-wrap">
+                                                Dec 23, 2020
+                                            </p>
+                                        </td>
+                                        <td class="px-3 py-3 bg-white text-sm">
+                                            <p class="text-gray-900 whitespace-no-wrap">
+                                                Action
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr class="border-b">
+                                        <td class="px-3 py-3 bg-white text-sm">
+                                            <p class="text-gray-900 whitespace-no-wrap">
+                                                Paymen To Another User
+                                            </p>
+                                        </td>
+                                        <td class="px-3 py-3 bg-white text-sm">
+                                            <div class="inline-flex">
+                                                <span class="font-bold">$200</span>
+                                                <span class="ml-3">USD</span>
+                                            </div>
+                                        </td>
+                                        <td class="px-3 py-3 bg-white text-sm">
+                                            <span class="px-3 py-1 bg-green-100 rounded-full text-green-900 font-bold">
+                                                On Process
+                                            </span>
+                                        </td>
+                                        <td class="px-3 py-3 bg-white text-sm">
+                                            <p class="text-gray-900 whitespace-no-wrap">
+                                                Dec 23, 2020
+                                            </p>
+                                        </td>
+                                        <td class="px-3 py-3 bg-white text-sm">
+                                            <p class="text-gray-900 whitespace-no-wrap">
+                                                Action
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr class="border-b">
+                                        <td class="px-3 py-3 bg-white text-sm">
+                                            <p class="text-gray-900 whitespace-no-wrap">
+                                                Paymen To Another User
+                                            </p>
+                                        </td>
+                                        <td class="px-3 py-3 bg-white text-sm">
+                                            <div class="inline-flex">
+                                                <span class="font-bold">$200</span>
+                                                <span class="ml-3">USD</span>
+                                            </div>
+                                        </td>
+                                        <td class="px-3 py-3 bg-white text-sm">
+                                            <span class="px-3 py-1 bg-green-100 rounded-full text-green-900 font-bold">
+                                                On Process
+                                            </span>
+                                        </td>
+                                        <td class="px-3 py-3 bg-white text-sm">
+                                            <p class="text-gray-900 whitespace-no-wrap">
+                                                Dec 23, 2020
+                                            </p>
+                                        </td>
+                                        <td class="px-3 py-3 bg-white text-sm">
+                                            <p class="text-gray-900 whitespace-no-wrap">
+                                                Action
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr class="border-b">
+                                        <td class="px-3 py-3 bg-white text-sm">
+                                            <p class="text-gray-900 whitespace-no-wrap">
+                                                Paymen To Another User
+                                            </p>
+                                        </td>
+                                        <td class="px-3 py-3 bg-white text-sm">
+                                            <div class="inline-flex">
+                                                <span class="font-bold">$200</span>
+                                                <span class="ml-3">USD</span>
+                                            </div>
+                                        </td>
+                                        <td class="px-3 py-3 bg-white text-sm">
+                                            <span class="px-3 py-1 bg-green-100 rounded-full text-green-900 font-bold">
+                                                On Process
+                                            </span>
+                                        </td>
+                                        <td class="px-3 py-3 bg-white text-sm">
+                                            <p class="text-gray-900 whitespace-no-wrap">
+                                                Dec 23, 2020
+                                            </p>
+                                        </td>
+                                        <td class="px-3 py-3 bg-white text-sm">
+                                            <p class="text-gray-900 whitespace-no-wrap">
+                                                Action
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr class="border-b">
+                                        <td class="px-3 py-3 bg-white text-sm">
+                                            <p class="text-gray-900 whitespace-no-wrap">
+                                                Paymen To Another User
+                                            </p>
+                                        </td>
+                                        <td class="px-3 py-3 bg-white text-sm">
+                                            <div class="inline-flex">
+                                                <span class="font-bold">$200</span>
+                                                <span class="ml-3">USD</span>
+                                            </div>
+                                        </td>
+                                        <td class="px-3 py-3 bg-white text-sm">
+                                            <span class="px-3 py-1 bg-green-100 rounded-full text-green-900 font-bold">
+                                                On Process
+                                            </span>
+                                        </td>
+                                        <td class="px-3 py-3 bg-white text-sm">
+                                            <p class="text-gray-900 whitespace-no-wrap">
+                                                Dec 23, 2020
+                                            </p>
+                                        </td>
+                                        <td class="px-3 py-3 bg-white text-sm">
+                                            <p class="text-gray-900 whitespace-no-wrap">
+                                                Action
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr class="border-b">
+                                        <td class="px-3 py-3 bg-white text-sm">
+                                            <p class="text-gray-900 whitespace-no-wrap">
+                                                Paymen To Another User
+                                            </p>
+                                        </td>
+                                        <td class="px-3 py-3 bg-white text-sm">
+                                            <div class="inline-flex">
+                                                <span class="font-bold">$200</span>
+                                                <span class="ml-3">USD</span>
+                                            </div>
+                                        </td>
+                                        <td class="px-3 py-3 bg-white text-sm">
+                                            <span class="px-3 py-1 bg-green-100 rounded-full text-green-900 font-bold">
+                                                On Process
+                                            </span>
+                                        </td>
+                                        <td class="px-3 py-3 bg-white text-sm">
+                                            <p class="text-gray-900 whitespace-no-wrap">
+                                                Dec 23, 2020
+                                            </p>
+                                        </td>
+                                        <td class="px-3 py-3 bg-white text-sm">
+                                            <p class="text-gray-900 whitespace-no-wrap">
+                                                Action
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr class="border-b">
+                                        <td class="px-3 py-3 bg-white text-sm">
+                                            <p class="text-gray-900 whitespace-no-wrap">
+                                                Paymen To Another User
+                                            </p>
+                                        </td>
+                                        <td class="px-3 py-3 bg-white text-sm">
+                                            <div class="inline-flex">
+                                                <span class="font-bold">$200</span>
+                                                <span class="ml-3">USD</span>
+                                            </div>
+                                        </td>
+                                        <td class="px-3 py-3 bg-white text-sm">
+                                            <span class="px-3 py-1 bg-green-100 rounded-full text-green-900 font-bold">
+                                                On Process
+                                            </span>
+                                        </td>
+                                        <td class="px-3 py-3 bg-white text-sm">
+                                            <p class="text-gray-900 whitespace-no-wrap">
+                                                Dec 23, 2020
+                                            </p>
+                                        </td>
+                                        <td class="px-3 py-3 bg-white text-sm">
+                                            <p class="text-gray-900 whitespace-no-wrap">
+                                                Action
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr class="border-b">
+                                        <td class="px-3 py-3 bg-white text-sm">
+                                            <p class="text-gray-900 whitespace-no-wrap">
+                                                Paymen To Another User
+                                            </p>
+                                        </td>
+                                        <td class="px-3 py-3 bg-white text-sm">
+                                            <div class="inline-flex">
+                                                <span class="font-bold">$200</span>
+                                                <span class="ml-3">USD</span>
+                                            </div>
+                                        </td>
+                                        <td class="px-3 py-3 bg-white text-sm">
+                                            <span class="px-3 py-1 bg-green-100 rounded-full text-green-900 font-bold">
+                                                On Process
+                                            </span>
+                                        </td>
+                                        <td class="px-3 py-3 bg-white text-sm">
+                                            <p class="text-gray-900 whitespace-no-wrap">
+                                                Dec 23, 2020
+                                            </p>
+                                        </td>
+                                        <td class="px-3 py-3 bg-white text-sm">
+                                            <p class="text-gray-900 whitespace-no-wrap">
+                                                Action
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr class="border-b">
+                                        <td class="px-3 py-3 bg-white text-sm">
+                                            <p class="text-gray-900 whitespace-no-wrap">
+                                                Paymen To Another User
+                                            </p>
+                                        </td>
+                                        <td class="px-3 py-3 bg-white text-sm">
+                                            <div class="inline-flex">
+                                                <span class="font-bold">$200</span>
+                                                <span class="ml-3">USD</span>
+                                            </div>
+                                        </td>
+                                        <td class="px-3 py-3 bg-white text-sm">
+                                            <span class="px-3 py-1 bg-green-100 rounded-full text-green-900 font-bold">
+                                                On Process
+                                            </span>
+                                        </td>
+                                        <td class="px-3 py-3 bg-white text-sm">
+                                            <p class="text-gray-900 whitespace-no-wrap">
+                                                Dec 23, 2020
+                                            </p>
+                                        </td>
+                                        <td class="px-3 py-3 bg-white text-sm">
+                                            <p class="text-gray-900 whitespace-no-wrap">
+                                                Action
+                                            </p>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="px-5 bg-white py-3 flex flex-col xs:flex-row items-center xs:justify-between">
+                                <div class="flex items-center">
+                                    <button type="button"
+                                        class="w-full px-1 py-4 border text-base rounded-l-xl text-gray-600 bg-white hover:bg-gray-100 px-4 py-2">
+                                        <svg width="9" fill="currentColor" height="8" class="" viewBox="0 0 1792 1792"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M1427 301l-531 531 531 531q19 19 19 45t-19 45l-166 166q-19 19-45 19t-45-19l-742-742q-19-19-19-45t19-45l742-742q19-19 45-19t45 19l166 166q19 19 19 45t-19 45z">
+                                            </path>
+                                        </svg>
+                                    </button>
+                                    <button type="button"
+                                        class="w-full px-1 py-1 border-t border-b text-base text-indigo-500 bg-white hover:bg-gray-100 px-4 py-2">
+                                        1
+                                    </button>
+                                    <button type="button"
+                                        class="w-full px-1 py-1 border text-base text-gray-600 bg-white hover:bg-gray-100 px-4 py-2">
+                                        2
+                                    </button>
+                                    <button type="button"
+                                        class="w-full px-1 py-1 border-t border-b text-base text-gray-600 bg-white hover:bg-gray-100 px-4 py-2">
+                                        3
+                                    </button>
+                                    <button type="button"
+                                        class="w-full px-1 py-1 border text-base text-gray-600 bg-white hover:bg-gray-100 px-4 py-2">
+                                        4
+                                    </button>
+                                    <button type="button"
+                                        class="w-full px-1 py-4 border-t border-b border-r text-base  rounded-r-xl text-gray-600 bg-white hover:bg-gray-100 px-4 py-2">
+                                        <svg width="9" fill="currentColor" height="8" class="" viewBox="0 0 1792 1792"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M1363 877l-742 742q-19 19-45 19t-45-19l-166-166q-19-19-19-45t19-45l531-531-531-531q-19-19-19-45t19-45l166-166q19-19 45-19t45 19l742 742q19 19 19 45t-19 45z">
+                                            </path>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
     <!-- script here -->
     <script>
-
+        let myChart = document.getElementById("myChart").getContext('2d');
+        var Chart = new Chart(myChart, {
+            type: 'line',
+            data: {
+                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                datasets: [{
+                    label: '# of Votes',
+                    data: [12, 19, 3, 5, 2, 3],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
     </script>
 </body>
 
